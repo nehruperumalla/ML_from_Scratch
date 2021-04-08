@@ -17,8 +17,8 @@ class LinearRegression:
 		for _ in range(self.n_iter):
 			y_hat = np.dot(X, self.weights) + self.bias
 
-			dw = (1/X.shape[0]) * np.dot(X.T, (y_hat - y))
-			db = (1/X.shape[0]) * np.sum(y_hat - y)
+			dw = (1/n_samples) * np.dot(X.T, (y_hat - y))
+			db = (1/n_samples) * np.sum(y_hat - y)
 
 			self.weights -= self.lr * dw
 			self.bias -= self.lr * db
